@@ -17,8 +17,6 @@ struct Steering {
 class SteeringBehavior {
 public:
     virtual ~SteeringBehavior() = default;
-    // TODO
-    // static Vector2D<float> Seek(Agent *agent, Vector2D<float> target);
     virtual Steering GetSteering() = 0;
 };
 

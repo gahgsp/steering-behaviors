@@ -16,7 +16,7 @@ public:
     void Update(float deltaTime);
     void Draw();
 private:
-    std::vector<Agent*> agents;
+    Agent* agent;
     Vector2D<float> target;
 };
 
