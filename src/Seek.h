@@ -7,13 +7,13 @@
 
 #include "SteeringBehavior.h"
 
-class Seek: SteeringBehavior {
-private:
-    Agent *agent;
-    Vector2D<float> target;
+class Seek: public SteeringBehavior {
 public:
     Seek(Agent *pAgent, Vector2D<float> pTarget);
     Steering GetSteering();
+private:
+    Agent *agent;
+    Vector2D<float> target;
 };
 
 
