@@ -4,7 +4,7 @@
 
 #include "Agent.h"
 
-Agent::Agent(): maxSpeed(300), maxSteerForce(400) {}
+Agent::Agent(): maxSpeed(200), maxSteerForce(0.1) {}
 
 void Agent::Draw() {
     Utils::DrawCircle(Application::renderer, static_cast<int>(position.x), static_cast<int>(position.y), 15, 25, 156, 31, 255);
@@ -19,8 +19,8 @@ void Agent::SetVelocity(Vector2D<float> vel) {
 }
 
 void Agent::Update(Steering steering, float deltaTime) {
+    velocity += steering.linear;
     position += velocity * deltaTime;
-    velocity += steering.linear * deltaTime;
 
     if (velocity.length() > maxSpeed) {
         velocity.normalize();
