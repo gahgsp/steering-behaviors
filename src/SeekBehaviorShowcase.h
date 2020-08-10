@@ -12,9 +12,9 @@
 class SeekBehaviorShowcase: public Showcase {
 public:
     SeekBehaviorShowcase();
-    ~SeekBehaviorShowcase();
-    void Update(float deltaTime);
-    void Draw();
+    ~SeekBehaviorShowcase() override;
+    void Update(float deltaTime) override;
+    void Draw() override;
 private:
     Agent* agent;
     Vector2D<float> target;

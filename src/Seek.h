@@ -9,8 +9,8 @@
 
 class Seek: public SteeringBehavior {
 public:
-    Seek(Agent *pAgent, Vector2D<float> pTarget);
-    Steering GetSteering();
+    Seek(Agent *pAgent, const Vector2D<float>& pTarget);
+    Steering GetSteering() override;
 private:
     Agent *agent;
     Vector2D<float> target;

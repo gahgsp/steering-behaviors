@@ -9,8 +9,8 @@
 
 class Arrive: public SteeringBehavior {
 public:
-    Arrive(Agent *pAgent, Vector2D<float> pTarget, float pApproachRadius);
-    Steering GetSteering();
+    Arrive(Agent *pAgent, const Vector2D<float>& pTarget, float pApproachRadius);
+    Steering GetSteering() override;
 private:
     Agent *agent;
     Vector2D<float> target;

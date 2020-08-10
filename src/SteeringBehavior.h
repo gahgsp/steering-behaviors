@@ -9,7 +9,7 @@
 #include "Agent.h"
 
 struct Steering {
-    Steering(Vector2D<float> l, float a): linear(l), angular(a) {}
+    Steering(const Vector2D<float>& l, float a): linear(l), angular(a) {}
     Vector2D<float> linear;
     float angular;
 };

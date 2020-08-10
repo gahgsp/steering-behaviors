@@ -13,11 +13,11 @@ int main(int argc, char *argv[])
     // auto *sbs = new SeekBehaviorShowcase();
     // app->Run(sbs);
 
-    // auto *fbs = new FleeBehaviorShowcase();
-    // app->Run(fbs);
+    auto *fbs = new FleeBehaviorShowcase();
+    app->Run(fbs);
 
-    auto *abs = new ArriveBehaviorShowcase();
-    app->Run(abs);
+    //auto *abs = new ArriveBehaviorShowcase();
+    //app->Run(abs);
 
     return 0;
 }

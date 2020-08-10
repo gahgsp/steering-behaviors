@@ -4,7 +4,7 @@
 
 #include "Arrive.h"
 
-Arrive::Arrive(Agent *pAgent, Vector2D<float> pTarget, float pApproachRadius) {
+Arrive::Arrive(Agent *pAgent, const Vector2D<float>& pTarget, float pApproachRadius) {
     agent = pAgent;
     target = pTarget;
     approachRadius = pApproachRadius;

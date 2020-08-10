@@ -11,9 +11,9 @@
 class ArriveBehaviorShowcase: public Showcase {
 public:
     ArriveBehaviorShowcase();
-    ~ArriveBehaviorShowcase();
-    void Update(float deltaTime);
-    void Draw();
+    ~ArriveBehaviorShowcase() override;
+    void Update(float deltaTime) override;
+    void Draw() override;
 private:
     Agent* agent;
     Vector2D<float> target;

@@ -43,6 +43,8 @@ void Application::Run(Showcase *showcase) {
         showcase->Update(deltaTime);
         showcase->Draw();
 
+        SDL_RenderPresent(Application::renderer);
+
         switch (event.type) {
             case SDL_QUIT:
                 quit = true;

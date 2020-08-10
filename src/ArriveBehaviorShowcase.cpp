@@ -39,7 +39,5 @@ void ArriveBehaviorShowcase::Draw() {
             Application::renderer,
             static_cast<int>(target.x),
             static_cast<int>(target.y), 100, 245, 218, 66, 255);
-
-    SDL_RenderPresent(Application::renderer);
 }
 

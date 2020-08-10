@@ -34,6 +34,4 @@ void FleeBehaviorShowcase::Draw() {
             Application::renderer,
             static_cast<int>(target.x),
             static_cast<int>(target.y), 15, 181, 33, 92, 255);
-
-    SDL_RenderPresent(Application::renderer);
 }

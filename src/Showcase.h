@@ -7,8 +7,8 @@
 
 class Showcase {
 public:
-    Showcase() {};
-    virtual ~Showcase() {};
+    Showcase() = default;
+    virtual ~Showcase() = default;
     virtual void Update(float deltaTime) = 0;
     virtual void Draw() = 0;
 };
