@@ -4,6 +4,7 @@
 #include "src/SeekBehaviorShowcase.h"
 #include "src/FleeBehaviorShowcase.h"
 #include "src/ArriveBehaviorShowcase.h"
+#include "src/WanderBehaviorShowcase.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,11 +14,14 @@ int main(int argc, char *argv[])
     // auto *sbs = new SeekBehaviorShowcase();
     // app->Run(sbs);
 
-    auto *fbs = new FleeBehaviorShowcase();
-    app->Run(fbs);
+    // auto *fbs = new FleeBehaviorShowcase();
+    // app->Run(fbs);
 
     //auto *abs = new ArriveBehaviorShowcase();
     //app->Run(abs);
+
+    auto wbs = new WanderBehaviorShowcase();
+    app->Run(wbs);
 
     return 0;
 }
