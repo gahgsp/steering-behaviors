@@ -7,7 +7,7 @@
 #include "Arrive.h"
 
 PathFollowingShowcase::PathFollowingShowcase() {
-    auto *pAgent = new Agent();
+    auto *pAgent = new Agent(100, 0.5);
     pAgent->SetPosition(Vector2D<float>(600, 400));
     pAgent->SetVelocity(Vector2D<float>(0, 0));
 

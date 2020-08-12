@@ -17,6 +17,7 @@ struct Steering;
 class Agent {
 public:
     Agent();
+    Agent(float pMaxSpeed, float pMaxSteerForce);
     void SetPosition(Vector2D<float> pos);
     Vector2D<float> GetPosition();
     void SetVelocity(Vector2D<float> vel);

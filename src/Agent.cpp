@@ -6,6 +6,11 @@
 
 Agent::Agent(): maxSpeed(200), maxSteerForce(0.1) {}
 
+Agent::Agent(float pMaxSpeed, float pMaxSteerForce) {
+    maxSpeed = pMaxSpeed;
+    maxSteerForce = pMaxSteerForce;
+}
+
 void Agent::Draw() {
     Utils::DrawCircle(Application::renderer, static_cast<int>(position.x), static_cast<int>(position.y), 15, 25, 156, 31, 255);
 }
