@@ -17,7 +17,7 @@ ArriveBehaviorShowcase::~ArriveBehaviorShowcase() {
     delete agent;
 }
 
-void ArriveBehaviorShowcase::Update(float deltaTime) {
+void ArriveBehaviorShowcase::Update(float deltaTime, SDL_Event *event) {
     int x, y;
     SDL_GetMouseState(&x, &y);
     target = Vector2D<float>(x, y);

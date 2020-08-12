@@ -40,7 +40,7 @@ void Application::Run(Showcase *showcase) {
         SDL_SetRenderDrawColor(Application::renderer, 0, 0, 0, 255);
         SDL_RenderClear(Application::renderer);
 
-        showcase->Update(deltaTime);
+        showcase->Update(deltaTime, &event);
         showcase->Draw();
 
         SDL_RenderPresent(Application::renderer);

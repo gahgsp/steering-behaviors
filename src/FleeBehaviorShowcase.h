@@ -13,7 +13,7 @@ class FleeBehaviorShowcase: public Showcase {
 public:
     FleeBehaviorShowcase();
     ~FleeBehaviorShowcase() override;
-    void Update(float deltaTime) override;
+    void Update(float deltaTime, SDL_Event *event) override;
     void Draw() override;
 private:
     Agent* agent;

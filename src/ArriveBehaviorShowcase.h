@@ -12,7 +12,7 @@ class ArriveBehaviorShowcase: public Showcase {
 public:
     ArriveBehaviorShowcase();
     ~ArriveBehaviorShowcase() override;
-    void Update(float deltaTime) override;
+    void Update(float deltaTime, SDL_Event *event) override;
     void Draw() override;
 private:
     Agent* agent;

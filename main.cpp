@@ -5,6 +5,7 @@
 #include "src/FleeBehaviorShowcase.h"
 #include "src/ArriveBehaviorShowcase.h"
 #include "src/WanderBehaviorShowcase.h"
+#include "src/PathFollowingShowcase.h"
 
 int main(int argc, char *argv[])
 {
@@ -20,8 +21,11 @@ int main(int argc, char *argv[])
     //auto *abs = new ArriveBehaviorShowcase();
     //app->Run(abs);
 
-    auto wbs = new WanderBehaviorShowcase();
-    app->Run(wbs);
+    // auto wbs = new WanderBehaviorShowcase();
+    // app->Run(wbs);
+
+    auto pfbs = new PathFollowingShowcase();
+    app->Run(pfbs);
 
     return 0;
 }

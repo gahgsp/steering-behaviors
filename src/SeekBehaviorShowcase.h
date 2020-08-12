@@ -13,7 +13,7 @@ class SeekBehaviorShowcase: public Showcase {
 public:
     SeekBehaviorShowcase();
     ~SeekBehaviorShowcase() override;
-    void Update(float deltaTime) override;
+    void Update(float deltaTime, SDL_Event *event) override;
     void Draw() override;
 private:
     Agent* agent;

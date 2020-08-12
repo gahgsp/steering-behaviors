@@ -12,7 +12,7 @@ class WanderBehaviorShowcase: public Showcase {
 public:
     WanderBehaviorShowcase();
     ~WanderBehaviorShowcase() override;
-    void Update(float deltaTime) override;
+    void Update(float deltaTime, SDL_Event *event) override;
     void Draw() override;
 private:
     Agent *agent;
