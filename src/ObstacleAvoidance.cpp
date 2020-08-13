@@ -12,28 +12,34 @@ ObstacleAvoidance::ObstacleAvoidance(Agent *pAgent, std::vector<Vector2D<float>>
 }
 
 Steering ObstacleAvoidance::GetSteering() {
-    Vector2D<float> avoidanceTarget;
-    auto forward = agent->GetVelocity();
-    forward.normalize();
-    forward *= 10; // TODO: Make this value a parameter!
+    Vector2D<float> mostThreateningObstacle;
+    Vector2D<float> avoidanceRoute;
+    Vector2D<float> avoidanceForce;
+    auto dynamicLength = agent->GetVelocity().length() / agent->GetMaximumSpeed();
+    auto forward = agent->GetPosition() + agent->GetVelocity().normalize() * dynamicLength;
+    auto halfForward = forward * 0.5;
 
-    if (!obstacles.empty()) {
-        for (auto i = 0; i < obstacles.size(); i++) {
-            auto distanceFromObstacle = (obstacles[i] - agent->GetPosition()).length();
-            if (distanceFromObstacle < 80) {
-                avoidanceTarget = obstacles[i] + obstacles[i].normalize() * 80;
-            }
+    for (auto i = 0; i < obstacles.size(); i++) {
+        if (obstacles[i].dist(forward) <= 55 || obstacles[i].dist(halfForward) <= 55) {
+            avoidanceForce = forward - obstacles[i];
+            avoidanceForce = avoidanceForce.normalize() * 100;
+            mostThreateningObstacle = obstacles[i];
         }
     }
 
-    // TODO: It can be 0 ...
-    if (avoidanceTarget.x != 0 && avoidanceTarget.y != 0) {
-        Seek seekBehavior(agent, avoidanceTarget);
-        return seekBehavior.GetSteering();
-    } else if (target.x != 0 && target.y != 0) {
-        // TODO: Also here it can be 0 ...
+    // TODO: Change these validations with X and Y equals to 0
+    if (mostThreateningObstacle.x != 0 && mostThreateningObstacle.y != 0) {
+        avoidanceRoute.x = forward.x - mostThreateningObstacle.x;
+        avoidanceRoute.y = forward.y - mostThreateningObstacle.y;
+
+        Seek seekBehavior(agent, avoidanceRoute);
+        Steering steeringForce = seekBehavior.GetSteering();
+        steeringForce.linear += avoidanceForce;
+        return steeringForce;
+    } else if (target.x != 0 && target.y != 0){
         Seek seekBehavior(agent, target);
-        return seekBehavior.GetSteering();
+        Steering steeringForce = seekBehavior.GetSteering();
+        return steeringForce;
     }
 
     return Steering(Vector2D<float>(0, 0), 0);

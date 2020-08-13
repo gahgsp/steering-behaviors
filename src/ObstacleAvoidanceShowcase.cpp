@@ -8,7 +8,7 @@
 #include "ObstacleAvoidance.h"
 
 ObstacleAvoidanceShowcase::ObstacleAvoidanceShowcase() {
-    auto *pAgent = new Agent(100, 0.5);
+    auto *pAgent = new Agent(100, 10);
     pAgent->SetPosition(Vector2D<float>(600, 400));
     pAgent->SetVelocity(Vector2D<float>(0, 0));
 
@@ -51,9 +51,4 @@ void ObstacleAvoidanceShowcase::Draw() {
     }
 
     agent->Draw();
-
-    Utils::DrawCircle(
-            Application::renderer,
-            static_cast<int>(agent->GetPosition().x),
-            static_cast<int>(agent->GetPosition().y), 35, 250, 204, 55, 255);
 }
