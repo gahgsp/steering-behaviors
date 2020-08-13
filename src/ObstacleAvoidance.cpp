@@ -19,6 +19,8 @@ Steering ObstacleAvoidance::GetSteering() {
     auto forward = agent->GetPosition() + agent->GetVelocity().normalize() * dynamicLength;
     auto halfForward = forward * 0.5;
 
+
+    // TODO: When having multiple obstacles, should select the closest to calculate the steering force
     for (auto i = 0; i < obstacles.size(); i++) {
         if (obstacles[i].dist(forward) <= 55 || obstacles[i].dist(halfForward) <= 55) {
             avoidanceForce = forward - obstacles[i];
