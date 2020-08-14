@@ -7,6 +7,7 @@
 #include "src/WanderBehaviorShowcase.h"
 #include "src/PathFollowingShowcase.h"
 #include "src/ObstacleAvoidanceShowcase.h"
+#include "src/EvadeBehaviorShowcase.h"
 
 int main(int argc, char *argv[])
 {
@@ -22,14 +23,17 @@ int main(int argc, char *argv[])
     //auto *abs = new ArriveBehaviorShowcase();
     //app->Run(abs);
 
-    // auto wbs = new WanderBehaviorShowcase();
+    // auto *wbs = new WanderBehaviorShowcase();
     // app->Run(wbs);
 
-    // auto pfbs = new PathFollowingShowcase();
+    // auto *pfbs = new PathFollowingShowcase();
     // app->Run(pfbs);
 
-    auto oabs = new ObstacleAvoidanceShowcase();
-    app->Run(oabs);
+    // auto *oabs = new ObstacleAvoidanceShowcase();
+    // app->Run(oabs);
+
+    auto *ebs = new EvadeBehaviorShowcase();
+    app->Run(ebs);
 
     return 0;
 }
