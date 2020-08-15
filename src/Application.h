@@ -15,7 +15,7 @@ public:
     Application() = default;
     ~Application() = default;
     void Initialize();
-    void Run(Showcase *showcase);
+    void Run();
 };
 
 #endif //AI_STEERING_BEHAVIOR_APPLICATION_H
