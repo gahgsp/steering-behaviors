@@ -35,13 +35,13 @@ void EvadeBehaviorShowcase::Draw() {
     Utils::DrawCircle(
             Application::renderer,
             static_cast<int>(target.x),
-            static_cast<int>(target.y), 15, 235, 235, 30, 255);
+            static_cast<int>(target.y), 15, 244, 67, 54, 255);
 
     // Awareness Circle
     Utils::DrawCircle(
             Application::renderer,
             static_cast<int>(target.x),
-            static_cast<int>(target.y), 100, 227, 9, 9, 255);
+            static_cast<int>(target.y), 100, 255, 87, 34, 255);
 
     agent->Draw();
 }

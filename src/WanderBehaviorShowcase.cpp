@@ -6,7 +6,7 @@
 #include "Wander.h"
 
 WanderBehaviorShowcase::WanderBehaviorShowcase() {
-    auto *pAgent = new Agent();
+    auto *pAgent = new Agent(100, 1);
     pAgent->SetPosition(Vector2D<float>(600, 400));
     pAgent->SetVelocity(Vector2D<float>(0, 0));
 

@@ -40,14 +40,14 @@ void ObstacleAvoidanceShowcase::Draw() {
         Utils::DrawCircle(
                 Application::renderer,
                 static_cast<int>(obstacles[i].x),
-                static_cast<int>(obstacles[i].y), 40, 237, 38, 24, 255);
+                static_cast<int>(obstacles[i].y), 40, 255, 193, 7, 255);
     }
 
     if (target.x != 0 && target.y != 0) {
         Utils::DrawCircle(
                 Application::renderer,
                 static_cast<int>(target.x),
-                static_cast<int>(target.y), 20, 29, 186, 20, 255);
+                static_cast<int>(target.y), 20, 244, 67, 54, 255);
     }
 
     agent->Draw();

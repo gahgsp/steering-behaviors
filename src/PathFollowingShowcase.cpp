@@ -65,7 +65,7 @@ void PathFollowingShowcase::Draw() {
         Utils::DrawCircle(
                 Application::renderer,
                 static_cast<int>(targets[i].x),
-                static_cast<int>(targets[i].y), 15, 181, 33, 92, 255);
+                static_cast<int>(targets[i].y), 5, 233, 30, 99, 255);
     }
 
     agent->Draw();

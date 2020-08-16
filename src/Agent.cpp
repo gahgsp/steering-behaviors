@@ -12,7 +12,7 @@ Agent::Agent(float pMaxSpeed, float pMaxSteerForce) {
 }
 
 void Agent::Draw() {
-    Utils::DrawCircle(Application::renderer, static_cast<int>(position.x), static_cast<int>(position.y), 15, 25, 156, 31, 255);
+    Utils::DrawCircle(Application::renderer, static_cast<int>(position.x), static_cast<int>(position.y), 15, 76, 175, 80, 255);
 }
 
 void Agent::SetPosition(Vector2D<float> pos) {

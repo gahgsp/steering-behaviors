@@ -36,10 +36,10 @@ Steering Wander::GetSteering() {
     Utils::DrawCircle(
             Application::renderer,
             static_cast<int>(wanderCircleCenterPosition.x),
-            static_cast<int>(wanderCircleCenterPosition.y), 100, 245, 218, 66, 255);
+            static_cast<int>(wanderCircleCenterPosition.y), 100, 255, 193, 7, 255);
 
-    // Draws the Agent's current velocity (yellow line)
-    SDL_SetRenderDrawColor(Application::renderer, 245, 218, 66, 255);
+    // Draws the Agent's current velocity (purple line)
+    SDL_SetRenderDrawColor(Application::renderer, 149, 117, 205, 255);
     SDL_RenderDrawLine(
             Application::renderer,
             static_cast<int>(agent->GetPosition().x), static_cast<int>(agent->GetPosition().y),
@@ -47,7 +47,7 @@ Steering Wander::GetSteering() {
             static_cast<int>(agent->GetPosition().y) + static_cast<int>(agent->GetVelocity().y) * 0.3);
 
     // Draws the Agent's current desired velocity (blue line)
-    SDL_SetRenderDrawColor(Application::renderer, 66, 114, 245, 255);
+    SDL_SetRenderDrawColor(Application::renderer, 79, 195, 247, 255);
     SDL_RenderDrawLine(
             Application::renderer,
             static_cast<int>(agent->GetPosition().x), static_cast<int>(agent->GetPosition().y),

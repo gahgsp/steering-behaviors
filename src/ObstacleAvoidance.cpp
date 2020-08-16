@@ -22,7 +22,7 @@ Steering ObstacleAvoidance::GetSteering() {
 
     // TODO: When having multiple obstacles, should select the closest to calculate the steering force
     for (auto i = 0; i < obstacles.size(); i++) {
-        if (obstacles[i].dist(forward) <= 55 || obstacles[i].dist(halfForward) <= 55) {
+        if (obstacles[i].dist(forward) <= 60 || obstacles[i].dist(halfForward) <= 60) {
             avoidanceForce = forward - obstacles[i];
             avoidanceForce = avoidanceForce.normalize() * 100;
             mostThreateningObstacle = obstacles[i];

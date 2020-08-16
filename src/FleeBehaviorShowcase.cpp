@@ -33,5 +33,5 @@ void FleeBehaviorShowcase::Draw() {
     Utils::DrawCircle(
             Application::renderer,
             static_cast<int>(target.x),
-            static_cast<int>(target.y), 15, 181, 33, 92, 255);
+            static_cast<int>(target.y), 15, 244, 67, 54, 255);
 }
