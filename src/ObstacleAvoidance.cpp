@@ -31,7 +31,8 @@ Steering ObstacleAvoidance::GetSteering() {
         }
     }
 
-    // TODO: Change these validations with X and Y equals to 0
+    // Silly way to check if the variables were initialized or not.
+    // With the <optional> from C++ 17 this could be easily avoided.
     if (mostThreateningObstacle.x != 0 && mostThreateningObstacle.y != 0) {
         avoidanceRoute.x = forward.x - mostThreateningObstacle.x;
         avoidanceRoute.y = forward.y - mostThreateningObstacle.y;

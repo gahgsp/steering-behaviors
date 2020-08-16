@@ -27,6 +27,6 @@ Steering Arrive::GetSteering() {
         steeringForce *= agent->GetMaximumSteerForce();
     }
 
-    auto steering = Steering(steeringForce, 0); // TODO: Calculate the rotation.
+    auto steering = Steering(steeringForce, 0);
     return steering;
 }

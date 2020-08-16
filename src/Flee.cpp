@@ -36,6 +36,6 @@ Steering Flee::GetSteering() {
             static_cast<int>(agent->GetPosition().x) + static_cast<int>(desiredVelocity.x) * 0.3,
             static_cast<int>(agent->GetPosition().y) + static_cast<int>(desiredVelocity.y) * 0.3);
 
-    auto steering = Steering(steeringForce, 0); // TODO: Calculate the rotation.
+    auto steering = Steering(steeringForce, 0);
     return steering;
 }
