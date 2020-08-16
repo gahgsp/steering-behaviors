@@ -20,7 +20,7 @@ void Application::Initialize() {
         std::cerr << "Something went wrong with the SDL2 initialization!" << SDL_GetError() << std::endl;
     }
 
-    SDL_Window* window = SDL_CreateWindow(
+    window = SDL_CreateWindow(
             "Artificial Intelligence: Steering Behaviors - Showcase",
             SDL_WINDOWPOS_CENTERED,
             SDL_WINDOWPOS_CENTERED,
@@ -41,6 +41,7 @@ void Application::Initialize() {
 
 void Application::Run() {
     bool quit = false;
+    bool isFullscreen = false;
     auto last_update = static_cast<float>(SDL_GetTicks());
 
     Showcase *currentBehaviorShowcase = new SeekBehaviorShowcase();
@@ -92,6 +93,9 @@ void Application::Run() {
                         delete currentBehaviorShowcase;
                         currentBehaviorShowcase = new EvadeBehaviorShowcase();
                         break;
+                    case SDL_SCANCODE_F:
+                        isFullscreen = !isFullscreen;
+                        break;
                     case SDL_SCANCODE_ESCAPE:
                         delete currentBehaviorShowcase;
                         quit = true;
@@ -100,6 +104,12 @@ void Application::Run() {
                 break;
             case SDL_QUIT:
                 quit = true;
+        }
+
+        if (isFullscreen) {
+            SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
+        } else {
+            SDL_SetWindowFullscreen(window, 0);
         }
     }
 

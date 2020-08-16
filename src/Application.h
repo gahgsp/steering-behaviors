@@ -16,6 +16,8 @@ public:
     ~Application() = default;
     void Initialize();
     void Run();
+private:
+    SDL_Window *window;
 };
 
 #endif //AI_STEERING_BEHAVIOR_APPLICATION_H
