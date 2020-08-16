@@ -5,7 +5,6 @@
 int main(int argc, char *argv[])
 {
     auto *app = new Application();
-    app->Initialize();
     app->Run();
 
     return 0;

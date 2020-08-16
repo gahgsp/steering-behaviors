@@ -15,7 +15,7 @@
 
 SDL_Renderer* Application::renderer;
 
-void Application::Initialize() {
+Application::Application() {
     if (SDL_Init(SDL_INIT_EVERYTHING) == -1) {
         std::cerr << "Something went wrong with the SDL2 initialization!" << SDL_GetError() << std::endl;
     }
@@ -37,6 +37,11 @@ void Application::Initialize() {
         std::cerr << "Something went wrong with the SDL Renderer creation!" << std::endl;
         return;
     }
+}
+
+Application::~Application() {
+    delete window;
+    delete renderer;
 }
 
 void Application::Run() {
@@ -103,6 +108,7 @@ void Application::Run() {
                 }
                 break;
             case SDL_QUIT:
+                delete currentBehaviorShowcase;
                 quit = true;
         }
 

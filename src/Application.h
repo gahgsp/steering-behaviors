@@ -12,9 +12,8 @@
 class Application {
 public:
     static SDL_Renderer *renderer;
-    Application() = default;
-    ~Application() = default;
-    void Initialize();
+    Application();
+    ~Application();
     void Run();
 private:
     SDL_Window *window;
