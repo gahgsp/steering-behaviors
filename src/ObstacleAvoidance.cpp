@@ -19,15 +19,12 @@ Steering ObstacleAvoidance::GetSteering() {
     auto forward = agent->GetPosition() + agent->GetVelocity().normalize() * dynamicLength;
     auto halfForward = forward * 0.5;
 
-    float closestObstacleDistance = INFINITY;
-
     for (auto i = 0; i < obstacles.size(); i++) {
         if ((obstacles[i].dist(forward) <= 60 || obstacles[i].dist(halfForward) <= 60) &&
-            agent->GetPosition().dist(mostThreateningObstacle) < closestObstacleDistance) {
+            agent->GetPosition().dist(obstacles[i]) < agent->GetPosition().dist(mostThreateningObstacle)) {
             avoidanceForce = forward - obstacles[i];
             avoidanceForce = avoidanceForce.normalize() * 100;
             mostThreateningObstacle = obstacles[i];
-            closestObstacleDistance = agent->GetPosition().dist(mostThreateningObstacle);
         }
     }
 
