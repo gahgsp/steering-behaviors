@@ -19,13 +19,15 @@ Steering ObstacleAvoidance::GetSteering() {
     auto forward = agent->GetPosition() + agent->GetVelocity().normalize() * dynamicLength;
     auto halfForward = forward * 0.5;
 
+    float closestObstacleDistance = INFINITY;
 
-    // TODO: When having multiple obstacles, should select the closest to calculate the steering force
     for (auto i = 0; i < obstacles.size(); i++) {
-        if (obstacles[i].dist(forward) <= 60 || obstacles[i].dist(halfForward) <= 60) {
+        if ((obstacles[i].dist(forward) <= 60 || obstacles[i].dist(halfForward) <= 60) &&
+            agent->GetPosition().dist(mostThreateningObstacle) < closestObstacleDistance) {
             avoidanceForce = forward - obstacles[i];
             avoidanceForce = avoidanceForce.normalize() * 100;
             mostThreateningObstacle = obstacles[i];
+            closestObstacleDistance = agent->GetPosition().dist(mostThreateningObstacle);
         }
     }
 
@@ -38,7 +40,7 @@ Steering ObstacleAvoidance::GetSteering() {
         Steering steeringForce = seekBehavior.GetSteering();
         steeringForce.linear += avoidanceForce;
         return steeringForce;
-    } else if (target.x != 0 && target.y != 0){
+    } else if (target.x != 0 && target.y != 0) {
         Seek seekBehavior(agent, target);
         Steering steeringForce = seekBehavior.GetSteering();
         return steeringForce;
